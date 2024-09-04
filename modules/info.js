@@ -1,6 +1,6 @@
 module.exports.config = {
     name: "info",
-    description: "Displays information about the message in JSON format",
+    description: "Gì vậy",
     usage: "/info",
     isAdmin: true
   };
