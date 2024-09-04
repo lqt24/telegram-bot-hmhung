@@ -25,8 +25,7 @@ module.exports.run = async function(bot, msg, args) {
         const url = new URL(input);
         hwid = url.searchParams.get("HWID");
     } else {
-        // Nếu không phải link, coi input là HWID trực tiếp
-        hwid = input.replace("HWID=", ""); // Loại bỏ phần "HWID=" nếu có
+        hwid = input.replace("HWID=", ""); 
     }
 
     if (!hwid) {
@@ -46,7 +45,7 @@ module.exports.run = async function(bot, msg, args) {
 Key: ${res.data.key}`
             );
         } else {
-            await bot.sendMessage(chatId, "Không tìm thấy key trong phản hồi từ API.");
+            await bot.sendMessage(chatId, "Đã có lỗi xảy ra.");
         }
     } catch (e) {
         console.error("Error:", e);
