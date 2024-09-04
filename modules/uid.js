@@ -1,6 +1,6 @@
 module.exports.config = {
   name: "uid",
-  description: "Responds with the user ID or the ID of a tagged user",
+  description: "Lấy uid người dùng.",
   usage: "/uid [@username]",
   credits: "hmhung",
   cooldowns: 5
@@ -22,7 +22,7 @@ module.exports.run = async (bot, msg, args) => {
       const chatMember = await bot.getChatMember(chatId, username);
       bot.sendMessage(chatId, `ID của người dùng ${username} là: ${chatMember.user.id}`);
     } catch (error) {
-      bot.sendMessage(chatId, `Chưa hỗ trợ tag.`);
+      bot.sendMessage(chatId, `Lỗi`);
     }
   } else {
     // Không có tag, trả về ID của người gửi tin nhắn
