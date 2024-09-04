@@ -4,7 +4,9 @@ module.exports = {
     config: {
         name: "nude",
         description: "Như cái tên",
-        usage: "/nude"
+        usage: "/nude",
+        credits: "hmhung",
+        cooldowns: 5
     },
     run: async (bot, msg) => {
         try {

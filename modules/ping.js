@@ -2,7 +2,10 @@ module.exports.config = {
     name: "ping",
     description: "Bot sẽ trả lời lại pong",
     usage: "/ping",
-    isAdmin: false  // Thay đổi thành true nếu lệnh này cần quyền admin
+    alias: ["p"],
+    isAdmin: false,
+    credits: "Nguyên Blue, hmhung",
+    cooldowns: 5
   };
   
   module.exports.run = async (bot, msg) => {

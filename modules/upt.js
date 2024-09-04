@@ -9,7 +9,9 @@ module.exports = {
         name: "uptime",
         description: "Hiển thị thông tin hệ thống của bot!",
         usages: "",
-        isAdmin: true
+        isAdmin: true,
+        credits: "vtuan, hmhung",
+        cooldowns: 0
     },
     run: async (bot, msg) => {
         const ping = Date.now();
@@ -56,10 +58,10 @@ module.exports = {
         const primaryIp = getPrimaryIP();
         try {
             const disks = await nodeDiskInfo.getDiskInfo();
-            const firstDisk = disks[0] || {}; // Use the first disk, or an empty object if no disks are found
+            const firstDisk = disks[0] || {}; 
             const usedSpace = firstDisk.blocks - firstDisk.available;
             function convertToGB(bytes) {
-                if (bytes === undefined) return 'N/A'; // Handle undefined value
+                if (bytes === undefined) return 'N/A'; 
                 const GB = bytes / (1024 * 1024 * 1024);
                 return GB.toFixed(2) + 'GB';
             }
