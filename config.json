@@ -1,5 +1,5 @@
 {
-    "token": "TOKEN",
+    "token": "Your token",
     "polling": true,
     "prefix": "/",
     "botName": "Bot Name",
