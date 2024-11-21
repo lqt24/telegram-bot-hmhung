@@ -16,6 +16,7 @@
     "cheerio": "^1.0.0-rc.12",
     "fs": "^0.0.1-security",
     "gradient-string": "^2.0.2",
+    "http": "^0.0.1-security",
     "https-proxy-agent": "^4.0.0",
     "moment-timezone": "^0.5.45",
     "mqtt": "^4.3.7",
