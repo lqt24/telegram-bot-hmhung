@@ -1,4 +1,5 @@
 const axios = require("axios")
+const { error } = require("npmlog")
 
 module.exports.config = {
     name: "gai",
@@ -7,8 +8,11 @@ module.exports.config = {
 }
 
 module.exports.run = async(bot, msg) => {
-    const res = await axios.get("https://c2x.site/media/girl-video")
+    try {
+    const res = await axios.get("https://api.hamanhhung.site/media/girl-video")
     const link = res.data.url
     bot.sendVideo(msg.chat.id, link, { caption: 'Ngắm thôi không húp được đâu.' });
-
+    } catch {
+        bot.sendMessage(msg.chat.id, "Đã xảy ra lỗi!");
+    };
 }
