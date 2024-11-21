@@ -15,7 +15,7 @@ module.exports.run = async (bot, msg, args) => {
         const json = await infoPostTT(str);
 
         if (json.images) {
-            bot.sendMessage(msg.chat.id, "Bot chưa hỗ trợ tải album!")
+            bot.sendMessage(msg.chat.id, "Bot hiện chưa hỗ trợ tải album!")
         }
         else if (json.play) {
             await bot.sendVideo(msg.chat.id, json.play, { caption: json.title });
