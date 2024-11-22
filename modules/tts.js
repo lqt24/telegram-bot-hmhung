@@ -1,6 +1,7 @@
 const { createReadStream, unlinkSync, writeFileSync } = require("fs-extra");
 const { resolve } = require("path");
 const axios = require('axios');
+process.env.NTBA_FIX_350 = true
 
 module.exports.config = {
     name: "tts",
