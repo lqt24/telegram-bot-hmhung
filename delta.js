@@ -2,18 +2,21 @@ const fs = require('fs');
 const TelegramBot = require('node-telegram-bot-api');
 const config = require('./config.json');
 const logger = require('./utils/log.js');
+const path = require("path");
 require('dotenv').config();
-
 const bot = new TelegramBot(process.env.TOKEN, { polling: config.polling });
 if (!process.env.TOKEN) {
     console.warn("Không tìm thấy token trong biến môi trường!")
     process.exit(0)
 };
+const eventMap = new Map();
 const commands = new Map();
-const cooldowns = new Map(); 
+const cooldowns = new Map();
 
-bot.on('polling_error', (error) => console.error('Lỗi khi polling:', error));
-bot.setMyCommands([])
+global.delta = {
+    handleReply: []
+}
+
 let cmd = []
 const loadCommands = () => {
     const commandFiles = fs.readdirSync('./plugins/commands/').filter(file => file.endsWith('.js'));
@@ -32,7 +35,7 @@ const loadCommands = () => {
             }
             loadedCommandCount++;
             cmd.push({ command: command.config.name, description: command.config.description })
-            } catch (error) {
+        } catch (error) {
             console.error(`Lỗi khi tải lệnh ${file}:`, error.message);
         }
     });
@@ -40,14 +43,44 @@ const loadCommands = () => {
     logger.loader(`Đã tải thành công ${loadedCommandCount}/${commandFiles.length} lệnh.`);
 };
 
-bot.getMe().then((me) => {
-    logger.loader(`Đăng nhập thành công tại: @${me.username}`);
-});
 
-const isAdmin = (userId) => {
-    return config.admins.includes(userId); 
+const eventsDir = './plugins/events';
+
+const loadEvents = () => {
+    const eventFiles = fs.readdirSync(eventsDir).filter(file => file.endsWith('.js'));
+    let loadedEvents = 0;
+
+    eventFiles.forEach(file => {
+        try {
+            const event = require(`${eventsDir}/${file}`);
+
+            if (event && event.name && event.execute) {
+                bot.on(event.name, (msg, ...args) => {
+                    const context = { bot, args, msg }; // Gói bot và các tham số vào object
+                    event.execute(context);
+                });
+                
+                 eventMap.set(event.name, event);
+                loadedEvents++;
+            } else {
+                console.error(`Sự kiện từ file ${file} không hợp lệ.`);
+            }
+        } catch (error) {
+            console.error(`Lỗi khi tải sự kiện từ file ${file}:`, error.message);
+        }
+    });
+
+    logger.loader(`Đã tải ${loadedEvents}/${eventFiles.length} sự kiện.`);
 };
-
+async function startBot() {
+    bot.getMe().then((me) => {
+        bot.on('polling_error', (error) => console.error('Lỗi khi polling:', error));
+        logger.loader(`Bot đã săn sàng nhận lệnh: https://t.me/${me.username}/`);
+    });
+}
+const isAdmin = (userId) => {
+    return config.admins.includes(userId);
+};
 bot.on('message', (msg) => {
     if (!msg.text || !msg.text.startsWith(config.prefix)) return;
 
@@ -65,7 +98,7 @@ bot.on('message', (msg) => {
 
         const now = Date.now();
         const cooldownKey = `${commandName}-${userId}`;
-        const cooldownAmount = (command.config.cooldowns || 0) * 1000; 
+        const cooldownAmount = (command.config.cooldowns || 0) * 1000;
         if (cooldowns.has(cooldownKey)) {
             const expirationTime = cooldowns.get(cooldownKey) + cooldownAmount;
             if (now < expirationTime) {
@@ -77,7 +110,7 @@ bot.on('message', (msg) => {
 
         cooldowns.set(cooldownKey, now);
         try {
-            command.run({bot, msg, args, commands}); 
+            command.run({ bot, msg, args, commands });
         } catch (error) {
             bot.sendMessage(msg.chat.id, "Đã xảy ra lỗi khi thực thi lệnh.");
             console.error(`Lỗi khi thực hiện lệnh ${commandName}:`, error);
@@ -86,8 +119,9 @@ bot.on('message', (msg) => {
         bot.sendMessage(msg.chat.id, "Lệnh không tồn tại!", { reply_to_message_id: msg.message_id });
     }
 });
-
+startBot();
 loadCommands();
+loadEvents();
 
 module.exports = {
     loadCommands
