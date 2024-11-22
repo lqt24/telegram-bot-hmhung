@@ -2,7 +2,6 @@ module.exports.config = {
     name: "ping",
     description: "Bot sẽ trả lời lại pong.",
     usage: "/ping",
-    alias: ["p"],
     isAdmin: false,
     credits: "Nguyên Blue, hmhung",
     cooldowns: 5
@@ -12,7 +11,7 @@ module.exports.config = {
     const chatId = msg.chat.id;
     const startTime = Date.now();
 
-    const sentMsg = await bot.sendMessage(chatId, "Wait...");
+    const sentMsg = await bot.sendMessage(chatId, "Wait...", { reply_to_message_id: msg.message_id });
     
     const endTime = Date.now();
     const ping = endTime - startTime;

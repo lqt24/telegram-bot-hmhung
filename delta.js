@@ -16,6 +16,10 @@ const loadCommands = () => {
     commandFiles.forEach(file => {
         try {
             const command = require(`./modules/${file}`);
+            if (commands.has(command.config.name)) {
+                console.warn(`Lệnh ${command.config.name} đã được load trước đó, bỏ qua.`);
+                return;
+            }
             commands.set(command.config.name, command);
             if (command.config.alias && Array.isArray(command.config.alias)) {
                 command.config.alias.forEach(alias => commands.set(alias, command));
@@ -73,8 +77,12 @@ bot.on('message', (msg) => {
             console.error(`Lỗi khi thực hiện lệnh ${commandName}:`, error);
         }
     } else {
-        bot.sendMessage(msg.chat.id, "Lệnh không tồn tại!");
+        bot.sendMessage(msg.chat.id, "Lệnh không tồn tại!", { reply_to_message_id: msg.message_id });
     }
 });
 
 loadCommands();
+
+module.exports = {
+    loadCommands
+}

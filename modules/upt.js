@@ -78,7 +78,7 @@ module.exports = {
 📑 Storage trống: ${convertToGB(firstDisk.available)}
 🛜 Ping: ${pingReal}ms
   `.trim();
-            bot.sendMessage(msg.chat.id, replyMsg)
+            bot.sendMessage(msg.chat.id, replyMsg, { reply_to_message_id: msg.message_id })
         } catch (error) {
             console.error('❎ Error getting disk information:', error.message);
         }
