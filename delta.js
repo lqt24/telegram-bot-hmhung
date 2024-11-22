@@ -5,7 +5,10 @@ const logger = require('./utils/log.js');
 require('dotenv').config();
 
 const bot = new TelegramBot(process.env.TOKEN, { polling: config.polling });
-
+if (!process.env.TOKEN) {
+    console.warn("Không tìm thấy token trong biến môi trường!")
+    process.exit(0)
+};
 const commands = new Map();
 const cooldowns = new Map(); 
 
@@ -13,14 +16,14 @@ bot.on('polling_error', (error) => console.error('Lỗi khi polling:', error));
 bot.setMyCommands([])
 let cmd = []
 const loadCommands = () => {
-    const commandFiles = fs.readdirSync('./modules').filter(file => file.endsWith('.js'));
+    const commandFiles = fs.readdirSync('./plugins/commands/').filter(file => file.endsWith('.js'));
     let loadedCommandCount = 0;
 
     commandFiles.forEach(file => {
         try {
-            const command = require(`./modules/${file}`);
+            const command = require(`./plugins/commands/${file}`);
             if (commands.has(command.config.name)) {
-                console.warn(`Lệnh ${command.config.name} đã được load trước đó, bỏ qua.`);
+                console.warn(`Đã tồn tại lệnh ${command.config.name} nên sẽ bỏ qua!`);
                 return;
             }
             commands.set(command.config.name, command);

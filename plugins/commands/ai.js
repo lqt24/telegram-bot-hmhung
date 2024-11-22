@@ -1,4 +1,4 @@
-const { chat } = require("./../utils/gemini")
+const { chat } = require("../../utils/gemini")
 
 module.exports.config = {
     name: "ai",
