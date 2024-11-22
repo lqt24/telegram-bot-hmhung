@@ -7,7 +7,7 @@ module.exports.config = {
     cooldowns: 20
 };
 
-module.exports.run = (bot, msg, args, commands) => {
+module.exports.run = ({ bot, msg, args, commands }) => {
     const chatId = msg.chat.id;
     const commandName = args[0];
 
@@ -30,8 +30,8 @@ module.exports.run = (bot, msg, args, commands) => {
     } else {
         const totalCommands = commands.size;  // Tổng số lệnh
         const helpMessage = `Tổng số lệnh hiện có: ${totalCommands}\nCác lệnh có thể sử dụng:\n\n${Array.from(commands.values())
-                .map((command) => `/${command.config.name} - ${command.config.description}`)
-                .join("\n")}
+            .map((command) => `/${command.config.name} - ${command.config.description}`)
+            .join("\n")}
         `;
         bot.sendMessage(chatId, helpMessage.trim());
     }

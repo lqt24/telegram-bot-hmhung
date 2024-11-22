@@ -9,7 +9,7 @@ module.exports.config = {
     usage: "draw [text]",
 };
 
-module.exports.run = async (bot, msg, args) => {
+module.exports.run = async ({ bot, msg, args }) => {
     const prompt = args.join(" ");
     const send = (content) => bot.sendMessage(msg.chat.id, content, { reply_to_message_id: msg.message_id });
 
@@ -20,7 +20,7 @@ module.exports.run = async (bot, msg, args) => {
 
     try {
         const response = await axios.get(`https://api.hamanhhung.site/ai/text2image?prompt=${encodeURI(prompt)}`);
-        
+
         if (response.data && response.data.url) {
             bot.sendPhoto(msg.chat.id, response.data.url, {
                 caption: "✨ Tạo ảnh thành công!",

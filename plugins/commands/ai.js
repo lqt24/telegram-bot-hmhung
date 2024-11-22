@@ -8,7 +8,7 @@ module.exports.config = {
     credits: "hmhung",
     usage: "ai [prompt]",
 };
-module.exports.run = async (bot, msg, args) => {
+module.exports.run = async ({ bot, msg, args }) => {
     const send = (content) => {
         bot.sendMessage(msg.chat.id, content, {
             reply_to_message_id: msg.message_id

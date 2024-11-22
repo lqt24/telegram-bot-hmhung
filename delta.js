@@ -77,7 +77,7 @@ bot.on('message', (msg) => {
 
         cooldowns.set(cooldownKey, now);
         try {
-            command.run(bot, msg, args, commands); 
+            command.run({bot, msg, args, commands}); 
         } catch (error) {
             bot.sendMessage(msg.chat.id, "Đã xảy ra lỗi khi thực thi lệnh.");
             console.error(`Lỗi khi thực hiện lệnh ${commandName}:`, error);

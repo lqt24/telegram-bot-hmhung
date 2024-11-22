@@ -9,7 +9,7 @@ module.exports.config = {
     cooldowns: 5
 };
 
-module.exports.run = async (bot, msg, args) => {
+module.exports.run = async ({bot, msg, args}) => {
     const str = args.join(" ");
     if (/(^https:\/\/)((vm|vt|www|v)\.)?(tiktok|douyin)\.com\//.test(str)) {
         const json = await infoPostTT(str);

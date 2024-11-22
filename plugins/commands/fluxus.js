@@ -8,7 +8,7 @@ module.exports.config = {
     cooldowns: 10
 };
 
-module.exports.run = async function(bot, msg, args) {
+module.exports.run = async function ({ bot, msg, args }) {
     const chatId = msg.chat.id;
     const input = args.join(" ");
 
@@ -25,7 +25,7 @@ module.exports.run = async function(bot, msg, args) {
         const url = new URL(input);
         hwid = url.searchParams.get("HWID");
     } else {
-        hwid = input.replace("HWID=", ""); 
+        hwid = input.replace("HWID=", "");
     }
 
     if (!hwid) {

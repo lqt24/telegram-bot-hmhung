@@ -12,11 +12,11 @@ module.exports.config = {
     credits: "Mirai Team, convert by Hà Mạnh Hùng"
 };
 
-module.exports.run = async (bot, msg, args) => {
+module.exports.run = async ({ bot, msg, args }) => {
     try {
-        const chatId = msg.chat.id;
+        const file = `${Date.now()}.mp3`
 
-        const path = resolve(__dirname, 'cache', `${Date.now()}.mp3`);
+        const path = resolve(__dirname, 'cache', file);
 
         const content = args.join(" ");
         const languageToSay = (["ru", "en", "ko", "ja"].some(item => content.startsWith(item)))
@@ -42,17 +42,17 @@ module.exports.run = async (bot, msg, args) => {
         }
 
         writeFileSync(path, audioData);
-        
+
         const fileOptions = {
-            filename: `${chatId}_${msg.from.id}.mp3`,
+            filename: file,
             contentType: "audio/mpeg"
         };
         const stream = await createReadStream(path)
-        await bot.sendAudio(msg.chat.id, stream, {}, fileOptions);
+        await bot.sendAudio(msg.chat.id, stream, { caption: "Tạo âm thanh thành công!", reply_to_message_id: msg.mesage_id }, fileOptions);
 
         unlinkSync(path);
     } catch (error) {
         console.error(error);
-        await bot.sendMessage(msg.chat.id, "Đã xảy ra lỗi khi tạo file âm thanh!");
+        await bot.sendMessage(msg.chat.id, "Đã xảy ra lỗi khi tạo file âm thanh!", { reply_to_message_id: msg.mesage_id });
     }
 };

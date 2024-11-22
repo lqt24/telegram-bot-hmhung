@@ -13,7 +13,7 @@ module.exports = {
         credits: "vtuan, hmhung",
         cooldowns: 0
     },
-    run: async (bot, msg) => {
+    run: async ({ bot, msg }) => {
         const ping = Date.now();
         async function getDependencyCount() {
             try {
@@ -58,10 +58,10 @@ module.exports = {
         const primaryIp = getPrimaryIP();
         try {
             const disks = await nodeDiskInfo.getDiskInfo();
-            const firstDisk = disks[0] || {}; 
+            const firstDisk = disks[0] || {};
             const usedSpace = firstDisk.blocks - firstDisk.available;
             function convertToGB(bytes) {
-                if (bytes === undefined) return 'N/A'; 
+                if (bytes === undefined) return 'N/A';
                 const GB = bytes / (1024 * 1024 * 1024);
                 return GB.toFixed(2) + 'GB';
             }

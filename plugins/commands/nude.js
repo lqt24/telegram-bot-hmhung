@@ -8,12 +8,12 @@ module.exports = {
         credits: "hmhung",
         cooldowns: 5
     },
-    run: async (bot, msg) => {
+    run: async ({ bot, msg }) => {
         try {
 
-            const imgsex = await axios.get("https://apichatbot.sumiproject.io.vn/images/nude");
+            const imgsex = await axios.get("https://api.sumiproject.net/images/nude");
             const imgsex_link = imgsex.data.url;
-            const videosex = await axios.get("https://apichatbot.sumiproject.io.vn/video/videosex");
+            const videosex = await axios.get("https://api.sumiproject.net/video/videosex");
             const videosex_link = videosex.data.url;
             const chatId = msg.chat.id;
 
