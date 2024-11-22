@@ -9,6 +9,9 @@ const bot = new TelegramBot(process.env.TOKEN, { polling: config.polling });
 const commands = new Map();
 const cooldowns = new Map(); 
 
+bot.on('polling_error', (error) => console.error('Lỗi khi polling:', error));
+bot.setMyCommands([])
+let cmd = []
 const loadCommands = () => {
     const commandFiles = fs.readdirSync('./modules').filter(file => file.endsWith('.js'));
     let loadedCommandCount = 0;
@@ -25,15 +28,15 @@ const loadCommands = () => {
                 command.config.alias.forEach(alias => commands.set(alias, command));
             }
             loadedCommandCount++;
+            cmd.push({ command: command.config.name, description: command.config.description })
             } catch (error) {
             console.error(`Lỗi khi tải lệnh ${file}:`, error.message);
         }
     });
-
+    bot.setMyCommands(cmd)
     logger.loader(`Đã tải thành công ${loadedCommandCount}/${commandFiles.length} lệnh.`);
 };
 
-bot.on('polling_error', (error) => console.error('Lỗi khi polling:', error));
 bot.getMe().then((me) => {
     logger.loader(`Đăng nhập thành công tại: @${me.username}`);
 });
