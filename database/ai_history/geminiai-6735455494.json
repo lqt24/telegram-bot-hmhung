@@ -38,5 +38,13 @@
   {
     "role": "model",
     "content": "JavaScript là một ngôn ngữ lập trình kịch bản (scripting language) được sử dụng rộng rãi trên web.  Nó chủ yếu được biết đến với khả năng làm cho các trang web trở nên tương tác và động.  Thay vì chỉ hiển thị thông tin tĩnh, JavaScript cho phép các trang web phản hồi với hành động của người dùng, chẳng hạn như:\n\n* **Tương tác với người dùng:**  Xử lý các sự kiện như nhấp chuột, di chuyển chuột, nhập liệu từ bàn phím, v.v...\n* **Cập nhật nội dung trang web:** Thay đổi nội dung hiển thị mà không cần tải lại toàn bộ trang.\n* **Kiểm tra dữ liệu:** Xác thực thông tin người dùng nhập vào trước khi gửi đi.\n* **Tạo hiệu ứng động:**  Thêm các hiệu ứng hình ảnh, hoạt ảnh, chuyển tiếp mượt mà.\n* **Tích hợp với các công nghệ khác:**  Làm việc với các API (Application Programming Interfaces) để truy cập dữ liệu từ các nguồn bên ngoài.\n* **Phát triển ứng dụng web:**  Là một phần không thể thiếu trong việc xây dựng các ứng dụng web phức tạp (khi kết hợp với các framework như React, Angular, Vue.js).\n* **Phát triển ứng dụng di động:**  Được sử dụng trong các framework như React Native và Ionic để phát triển ứng dụng trên các nền tảng di động.\n\n\nJavaScript chạy trên trình duyệt web của người dùng (client-side).  Điều này có nghĩa là mã JavaScript được tải xuống và thực thi bởi trình duyệt, chứ không phải trên máy chủ.  Tuy nhiên,  có những công nghệ như Node.js cho phép chạy JavaScript trên máy chủ (server-side).\n\nNói tóm lại, JavaScript là một ngôn ngữ lập trình linh hoạt và mạnh mẽ, đóng vai trò quan trọng trong việc tạo ra các trang web và ứng dụng hiện đại.\n"
+  },
+  {
+    "role": "user",
+    "content": "chào"
+  },
+  {
+    "role": "model",
+    "content": "Chào bạn! Có gì mình có thể giúp bạn không?\n"
   }
 ]
