@@ -12,4 +12,3 @@ build/
 .env.local
 .DS_Store
 Thumbs.db
-config.json

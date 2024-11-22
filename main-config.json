@@ -1,8 +1,8 @@
 {
-    "token": "Token",
+    "token": "Your bot token",
     "polling": true,
     "prefix": "/",
-    "botName": "Bot Name",
+    "botName": "Delta",
     "admins": [6735455494]
   }
   
