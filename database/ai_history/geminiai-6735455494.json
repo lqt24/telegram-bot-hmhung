@@ -1,0 +1,10 @@
+[
+  {
+    "role": "user",
+    "content": "hi"
+  },
+  {
+    "role": "model",
+    "content": "Chào bạn! Có gì mình có thể giúp bạn không?\n"
+  }
+]
