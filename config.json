@@ -1,5 +1,4 @@
 {
-    "token": "Your bot token",
     "polling": true,
     "prefix": "/",
     "botName": "Delta",

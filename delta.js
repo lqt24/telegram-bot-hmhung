@@ -1,9 +1,10 @@
 const fs = require('fs');
 const TelegramBot = require('node-telegram-bot-api');
 const config = require('./config.json');
-const logger = require('./utils/log.js'); // logger by Niiozic
+const logger = require('./utils/log.js');
+require('dotenv').config();
 
-const bot = new TelegramBot(config.token, { polling: config.polling });
+const bot = new TelegramBot(process.env.TOKEN, { polling: config.polling });
 
 const commands = new Map();
 const cooldowns = new Map(); 
