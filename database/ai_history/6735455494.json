@@ -94,5 +94,165 @@
         "text": "Dạ, Ngô Đình Diệm là một nhân vật lịch sử quan trọng của Việt Nam.  Tui sẽ tóm tắt tiểu sử của ông cho anh nhé:\n\nNgô Đình Diệm (1901-1963) là một chính trị gia người Việt Nam, từng giữ chức Tổng thống Việt Nam Cộng hòa từ năm 1955 đến năm 1963.  Ông sinh ra trong một gia đình Công giáo quyền thế ở Huế.  Sau khi tốt nghiệp trường Quốc học Huế, ông theo học luật tại Pháp.  Ông từng giữ một số chức vụ quan trọng trong chính quyền thuộc địa Pháp.\n\nSau khi Việt Nam bị chia cắt, Ngô Đình Diệm trở thành Thủ tướng Quốc gia Việt Nam vào năm 1954.  Ông được Mỹ hậu thuẫn mạnh mẽ và nhanh chóng thiết lập một chế độ độc tài, tập trung quyền lực vào tay mình và gia đình.  Chính sách của ông tập trung vào chống cộng, xây dựng một nhà nước mạnh,  nhưng đồng thời cũng gây ra nhiều bất bình trong dân chúng do sự đàn áp chính trị và tham nhũng.\n\nChính quyền Ngô Đình Diệm bị chỉ trích vì sự độc đoán, tham nhũng, và sự phân biệt đối xử với Phật giáo. Cuối cùng, ông bị lật đổ và ám sát trong một cuộc đảo chính quân sự do tướng Nguyễn Khánh lãnh đạo vào ngày 1 tháng 11 năm 1963.\n\nĐây chỉ là một tóm tắt ngắn gọn.  Nếu anh muốn tìm hiểu sâu hơn về cuộc đời và sự nghiệp của Ngô Đình Diệm, tui gợi ý anh có thể tìm kiếm thông tin trên các nguồn uy tín như sách sử, báo chí, và các trang web học thuật.  Anh có muốn tui tìm kiếm thêm thông tin chi tiết về một khía cạnh cụ thể nào đó trong cuộc đời ông không?  Ví dụ như thời gian ông ở Pháp, chính sách của ông, hay nguyên nhân dẫn đến sự sụp đổ của chính quyền ông?\n"
       }
     ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "{\"content\":\"\",\"name\":\"Hùng\",\"id\":6735455494,\"isAdmin\":true,\"time\":\"Thứ tư - 25/12/2024 - 19:37:00\"}"
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "{\"content\":\"\",\"name\":\"Hùng\",\"id\":6735455494,\"isAdmin\":true,\"time\":\"Thứ tư - 25/12/2024 - 19:37:00\"}"
+      }
+    ]
+  },
+  {
+    "parts": [
+      {
+        "text": "Anh Hùng nhắn tin gì vậy ạ? Tui đang chờ hướng dẫn của anh đó!\n"
+      }
+    ],
+    "role": "model"
+  },
+  {
+    "role": "model",
+    "parts": [
+      {
+        "text": "Anh Hùng nhắn tin gì vậy ạ? Tui đang chờ hướng dẫn của anh đó!\n"
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "{\"content\":\"thời gian cụ thể\",\"name\":\"Hùng\",\"id\":6735455494,\"isAdmin\":true,\"time\":\"Thứ tư - 25/12/2024 - 19:42:51\"}"
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "{\"content\":\"thời gian cụ thể\",\"name\":\"Hùng\",\"id\":6735455494,\"isAdmin\":true,\"time\":\"Thứ tư - 25/12/2024 - 19:42:51\"}"
+      }
+    ]
+  },
+  {
+    "parts": [
+      {
+        "text": "Anh muốn biết thời gian cụ thể nào vậy anh Hùng?  Anh cần tui cung cấp thông tin về thời gian liên quan đến sự kiện nào hay thời điểm nào cụ thể không ạ? Tui cần thêm thông tin để hiểu rõ hơn yêu cầu của anh.\n"
+      }
+    ],
+    "role": "model"
+  },
+  {
+    "role": "model",
+    "parts": [
+      {
+        "text": "Anh muốn biết thời gian cụ thể nào vậy anh Hùng?  Anh cần tui cung cấp thông tin về thời gian liên quan đến sự kiện nào hay thời điểm nào cụ thể không ạ? Tui cần thêm thông tin để hiểu rõ hơn yêu cầu của anh.\n"
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "{\"content\":\"thời gian bây giờ ấy\",\"name\":\"Hùng\",\"id\":6735455494,\"isAdmin\":true,\"time\":\"Thứ tư - 25/12/2024 - 19:43:03\"}"
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "{\"content\":\"thời gian bây giờ ấy\",\"name\":\"Hùng\",\"id\":6735455494,\"isAdmin\":true,\"time\":\"Thứ tư - 25/12/2024 - 19:43:03\"}"
+      }
+    ]
+  },
+  {
+    "parts": [
+      {
+        "text": "Hiện tại là 19:43:15 ngày Thứ Tư, 25 tháng 12 năm 2024.  (Lưu ý: thời gian này có thể không hoàn toàn chính xác do sự khác biệt về múi giờ và thời gian xử lý của hệ thống).\n"
+      }
+    ],
+    "role": "model"
+  },
+  {
+    "role": "model",
+    "parts": [
+      {
+        "text": "Hiện tại là 19:43:15 ngày Thứ Tư, 25 tháng 12 năm 2024.  (Lưu ý: thời gian này có thể không hoàn toàn chính xác do sự khác biệt về múi giờ và thời gian xử lý của hệ thống).\n"
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "{\"content\":\"Hi\",\"name\":\"Hùng\",\"id\":6735455494,\"isAdmin\":true,\"time\":\"Thứ tư - 25/12/2024 - 19:54:59\"}"
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "{\"content\":\"Hi\",\"name\":\"Hùng\",\"id\":6735455494,\"isAdmin\":true,\"time\":\"Thứ tư - 25/12/2024 - 19:54:59\"}"
+      }
+    ]
+  },
+  {
+    "parts": [
+      {
+        "text": "Hi anh Hùng! Có gì mình giúp anh được không ạ?\n"
+      }
+    ],
+    "role": "model"
+  },
+  {
+    "role": "model",
+    "parts": [
+      {
+        "text": "Hi anh Hùng! Có gì mình giúp anh được không ạ?\n"
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "{\"content\":\"Hồ chí minh là ai\",\"name\":\"Hùng\",\"id\":6735455494,\"isAdmin\":true,\"time\":\"Thứ tư - 25/12/2024 - 19:55:26\"}"
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "{\"content\":\"Hồ chí minh là ai\",\"name\":\"Hùng\",\"id\":6735455494,\"isAdmin\":true,\"time\":\"Thứ tư - 25/12/2024 - 19:55:26\"}"
+      }
+    ]
+  },
+  {
+    "parts": [
+      {
+        "text": "Hồ Chí Minh (1890-1969), tên khai sinh là Nguyễn Sinh Cung, là một nhà cách mạng cộng sản, nhà lãnh đạo, nhà văn, nhà thơ và nhà hoạt động chính trị nổi tiếng của Việt Nam. Ông là người sáng lập Đảng Cộng sản Việt Nam và là vị lãnh tụ hàng đầu của phong trào độc lập dân tộc Việt Nam.  Vai trò của ông trong lịch sử Việt Nam vô cùng quan trọng, đánh dấu một bước ngoặt lớn trong quá trình đấu tranh giành độc lập của dân tộc.\n\nÔng đã dành phần lớn cuộc đời mình tham gia vào các hoạt động chính trị, lãnh đạo nhiều cuộc đấu tranh giành độc lập khỏi ách thống trị của thực dân Pháp và đế quốc Mỹ.  Tư tưởng và sự nghiệp của ông đã để lại dấu ấn sâu sắc trong lịch sử Việt Nam và  khu vực Đông Nam Á.\n\nTuy nhiên, việc đánh giá vai trò và di sản của Hồ Chí Minh vẫn còn nhiều tranh luận, cả về mặt tích cực và tiêu cực.  Việc tìm hiểu đầy đủ về ông đòi hỏi phải tham khảo nhiều nguồn thông tin khác nhau từ nhiều góc nhìn khác nhau.\n\n\nAnh có muốn mình cung cấp thêm thông tin chi tiết về một khía cạnh cụ thể nào đó trong cuộc đời và sự nghiệp của Hồ Chí Minh không? Ví dụ như thời trẻ của ông, quá trình thành lập Đảng Cộng sản Việt Nam, hay vai trò của ông trong cuộc kháng chiến chống Pháp và chống Mỹ?\n"
+      }
+    ],
+    "role": "model"
+  },
+  {
+    "role": "model",
+    "parts": [
+      {
+        "text": "Hồ Chí Minh (1890-1969), tên khai sinh là Nguyễn Sinh Cung, là một nhà cách mạng cộng sản, nhà lãnh đạo, nhà văn, nhà thơ và nhà hoạt động chính trị nổi tiếng của Việt Nam. Ông là người sáng lập Đảng Cộng sản Việt Nam và là vị lãnh tụ hàng đầu của phong trào độc lập dân tộc Việt Nam.  Vai trò của ông trong lịch sử Việt Nam vô cùng quan trọng, đánh dấu một bước ngoặt lớn trong quá trình đấu tranh giành độc lập của dân tộc.\n\nÔng đã dành phần lớn cuộc đời mình tham gia vào các hoạt động chính trị, lãnh đạo nhiều cuộc đấu tranh giành độc lập khỏi ách thống trị của thực dân Pháp và đế quốc Mỹ.  Tư tưởng và sự nghiệp của ông đã để lại dấu ấn sâu sắc trong lịch sử Việt Nam và  khu vực Đông Nam Á.\n\nTuy nhiên, việc đánh giá vai trò và di sản của Hồ Chí Minh vẫn còn nhiều tranh luận, cả về mặt tích cực và tiêu cực.  Việc tìm hiểu đầy đủ về ông đòi hỏi phải tham khảo nhiều nguồn thông tin khác nhau từ nhiều góc nhìn khác nhau.\n\n\nAnh có muốn mình cung cấp thêm thông tin chi tiết về một khía cạnh cụ thể nào đó trong cuộc đời và sự nghiệp của Hồ Chí Minh không? Ví dụ như thời trẻ của ông, quá trình thành lập Đảng Cộng sản Việt Nam, hay vai trò của ông trong cuộc kháng chiến chống Pháp và chống Mỹ?\n"
+      }
+    ]
   }
 ]

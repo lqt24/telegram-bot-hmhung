@@ -17,8 +17,8 @@ const cooldowns = new Map();
 global.delta = {
     handleReply: []
 }
-
 let cmd = []
+let botName;
 const loadCommands = () => {
     const commandFiles = fs.readdirSync('./plugins/commands/').filter(file => file.endsWith('.js'));
     let loadedCommandCount = 0;
@@ -75,6 +75,7 @@ const loadEvents = () => {
 };
 async function startBot() {
     bot.getMe().then((me) => {
+        botName = me.username;
         bot.on('polling_error', (error) => console.error('Lỗi khi polling:', error));
         logger.loader(`Bot đã săn sàng nhận lệnh: https://t.me/${me.username}/`);
     });
@@ -86,8 +87,18 @@ bot.on('message', (msg) => {
     if (!msg.text || !msg.text.startsWith(config.prefix)) return;
 
     const args = msg.text.slice(config.prefix.length).trim().split(" ");
-    const commandName = args.shift().toLowerCase();
+    let commandName = args.shift().toLowerCase();
     const userId = msg.from.id;
+
+    // Loại bỏ tên bot nếu có
+    if (commandName.includes('@')) {
+        const [baseCommand, mentionedBot] = commandName.split('@');
+        if (mentionedBot.toLowerCase() === botName.toLowerCase()) {
+            commandName = baseCommand; // Chỉ lấy tên lệnh
+        } else {
+            return; // Nếu lệnh không phải dành cho bot này, bỏ qua
+        }
+    }
 
     if (commands.has(commandName)) {
         const command = commands.get(commandName);
@@ -127,3 +138,4 @@ loadEvents();
 module.exports = {
     loadCommands
 }
+
