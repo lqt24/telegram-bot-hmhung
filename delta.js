@@ -1,6 +1,7 @@
 const fs = require('fs');
 const TelegramBot = require('node-telegram-bot-api');
 const config = require('./config.json');
+global.config = config;
 const logger = require('./utils/log.js');
 const path = require("path");
 require('dotenv').config();
