@@ -16,6 +16,7 @@
     "bluebird": "^2.11.0",
     "chalk": "^4.1.2",
     "cheerio": "^1.0.0-rc.12",
+    "crypto": "^1.0.1",
     "dotenv": "^16.4.5",
     "fbdl.js": "^1.0.0",
     "fs": "^0.0.1-security",
