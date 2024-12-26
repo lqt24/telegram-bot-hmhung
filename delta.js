@@ -58,11 +58,11 @@ const loadEvents = () => {
 
             if (event && event.type && event.name && event.execute) {
                 bot.on(event.type, (msg, ...args) => {
-                    const context = { bot, args, msg }; // Gói bot và các tham số vào object
+                    const context = { bot, args, msg }; 
                     event.execute(context);
                 });
 
-                 eventMap.set(event.type, event);
+                eventMap.set(event.type, event);
                 loadedEvents++;
             } else {
                 console.error(`Sự kiện từ file ${file} không hợp lệ.`);
@@ -82,7 +82,7 @@ async function startBot() {
     });
 }
 bot.on('message', (msg) => {
-    require("./core/listen.js")({msg, bot, commands});
+    require("./core/listen.js")({ msg, bot, commands, eventMap });
 });
 startBot();
 loadCommands();
@@ -91,4 +91,3 @@ loadEvents();
 module.exports = {
     loadCommands
 }
-
