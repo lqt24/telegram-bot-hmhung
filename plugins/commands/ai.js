@@ -14,12 +14,12 @@ module.exports.config = {
     name: "ai",
     isAdmin: false,
     cooldowns: 5,
-    description: "on/off AI.",
+    description: "Chat with AI",
     credits: "hmhung",
-    usage: "/ai",
+    usage: "ai [prompt]",
 };
 
-module.exports.run = async ({ bot, msg }) => {
+module.exports.run = async ({ bot, msg, args }) => {
     const send = (content) => {
         bot.sendMessage(msg.chat.id, content, {
             reply_to_message_id: msg.message_id,
@@ -34,11 +34,12 @@ module.exports.run = async ({ bot, msg }) => {
         if (status.includes(userId)) {
             status = status.filter(id => id !== userId);
             updateStatus(status);
-            send("AI đã được tắt. Bạn có thể sử dụng lệnh /ai để bật lại.");
+            send("AI status đã bị tắt.");
         } else {
+            // Nếu chưa có, thêm ID vào danh sách
             status.push(userId);
             updateStatus(status);
-            send("AI đã được bật. Bạn có thể sử dụng lệnh /ai để tắt.");
+            send("AI status đã được bật.");
         }
     } catch (error) {
         console.error("Error updating AI status:", error);
