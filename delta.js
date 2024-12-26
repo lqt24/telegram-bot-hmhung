@@ -35,7 +35,7 @@ const loadCommands = () => {
                 command.config.alias.forEach(alias => commands.set(alias, command));
             }
             loadedCommandCount++;
-            cmd.push({ command: command.config.name, description: command.config.description })
+            cmd.push({ command: command.config.name, description: command.config.description || "Không có mô tả" })
         } catch (error) {
             console.error(`Lỗi khi tải lệnh ${file}:`, error.message);
         }
