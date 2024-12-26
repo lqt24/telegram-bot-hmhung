@@ -37,6 +37,7 @@ function getAiAutoStatus() {
 
 module.exports = {
     name: 'ai',
+    type: 'message',
     async execute({ bot, msg }) {
         const aiAutoStt = getAiAutoStatus(); 
         if (msg.text && msg.text.startsWith(`${global.config.prefix}ai`)) return;
@@ -56,7 +57,7 @@ module.exports = {
             };
             const prompt = JSON.stringify(prompts);
 
-            if (!process.env.GEMINI_API) return send("Không tìm thấy API key!");
+            if (!process.env.GEMINI_API_KEY) return send("Không tìm thấy API key!");
             if (!prompt) return send("Chưa nhập Prompt!");
 
             try {
